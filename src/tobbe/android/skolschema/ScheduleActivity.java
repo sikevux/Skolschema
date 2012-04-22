@@ -7,13 +7,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Calendar;
 
-import net.qualityapp.alert.Alert;
-import net.qualityapp.releaselog.ReleaseLog;
-import net.qualityapp.repository.BaseQualityAppObject;
-import net.qualityapp.repository.IOnConnectionMissingListener;
-import net.qualityapp.repository.IOnUpdateCheckResultListener;
-import net.qualityapp.statistics.User;
-import net.qualityapp.updatechecker.UpdateChecker;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -31,7 +24,7 @@ import android.view.WindowManager;
 import android.webkit.WebView;
 import android.widget.Toast;
 
-public class ScheduleActivity extends Activity implements IOnConnectionMissingListener {
+public class ScheduleActivity extends Activity {
 
 	public static final String BASE_DIR = "Skolschema";
 	public static final String INFO_FILE = "info.dat";
@@ -85,20 +78,6 @@ public class ScheduleActivity extends Activity implements IOnConnectionMissingLi
 			} catch (IOException e) {
 				Logger.log("Kunde inte skapa .nomedia-fil. Schmeabilder kan dyka upp i galleriappen.");
 			}
-        }
-
-        // Register user to QualityApp
-        User qAppUser = new User();
-        qAppUser.monitor(this);
-        
-        // Check for alerts
-        Alert qAppAlert = new Alert();
-        qAppAlert.check(this); 
-        
-        // Check for updates
-        if(Settings.getBoolean(Settings.CHECK_FOR_UPDATES)) {
-	        UpdateChecker qAppUpdateChecker = new UpdateChecker();
-	        qAppUpdateChecker.checkForUpdates(this, null);
         }
 
         // Load a schedule
@@ -307,7 +286,7 @@ public class ScheduleActivity extends Activity implements IOnConnectionMissingLi
     
     
 	private void aboutDialog() {
-		final String items[] = {"Hjälp", "Uppdateringslogg", "Sök efter uppdateringar", "Inställningar"};
+		final String items[] = {"Hjälp", "Inställningar"};
 		final ScheduleActivity thisActivity = this;
 
 		AlertDialog.Builder ab = new AlertDialog.Builder(this);
@@ -320,27 +299,6 @@ public class ScheduleActivity extends Activity implements IOnConnectionMissingLi
 	            	Intent intent = new Intent(thisActivity, HelpActivity.class);
 	            	startActivity(intent);
 				} else if(choice == 1) {
-			        // Show release log
-			        ReleaseLog qAppReleaseLog = new ReleaseLog();
-			        qAppReleaseLog.setOnConnectionMissingListener(thisActivity);
-			        qAppReleaseLog.show(thisActivity);
-
-				} else if(choice == 2) {
-			        // Check for updates (QualityApp)
-			        UpdateChecker qAppUpdateChecker = new UpdateChecker();
-			        qAppUpdateChecker.setOnConnectionMissingListener(thisActivity);
-			        qAppUpdateChecker.checkForUpdates(thisActivity, new IOnUpdateCheckResultListener() {
-
-						public boolean OnUpdateCheckResult(boolean updateFound) {
-							if(!updateFound) {
-								Toast.makeText(thisActivity, "Detta är den senaste versionen", Toast.LENGTH_SHORT).show();
-							}
-							
-							return true;
-						}
-
-			        });
-				} else if(choice == 3) {
 					// Start the settings activity
 	            	Intent intent = new Intent(thisActivity, AppSettingsActivity.class);
 	            	startActivity(intent);
@@ -350,12 +308,6 @@ public class ScheduleActivity extends Activity implements IOnConnectionMissingLi
 		
 		ab.show();
 	}
-
-	@Override
-	public void onConnectionMissing(BaseQualityAppObject arg0) {
-		Toast.makeText(this, "Ingen internetanslutning tillgänglig", Toast.LENGTH_SHORT).show();
-	}
-	
 	
 	private class DownloadSchedule extends AsyncTask <String, Integer, String> {
 

@@ -5,12 +5,6 @@
     android:orientation="vertical" >
 
     <CheckBox
-        android:id="@+id/checkForUpdates"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sök efter appuppdateringar automatiskt (kan göra uppstartstiden långsammare)" />
-
-    <CheckBox
         android:id="@+id/updateScheduleOnMobileNetwork"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

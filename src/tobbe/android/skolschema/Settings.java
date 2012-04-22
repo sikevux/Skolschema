@@ -22,13 +22,11 @@ public class Settings {
 	private static final String NAME_VALUE_DELIMITER = "|";
 	
 	// List of available settings
-	public static final String CHECK_FOR_UPDATES = "CHECK_FOR_UPDATES";
 	public static final String UPDATE_SCHEDULES_ON_MOBILE_NETWORK = "UPDATE_SCHEDULE_ON_MOBILE_NETWORK";
 	public static final String FULLSCREEN_MODE = "FULLSCREEN_MODE";
 	
 	// Default values
-	private static final String[] SETTINGS_DEFAULT_VALUES = { CHECK_FOR_UPDATES, "true",
-															  UPDATE_SCHEDULES_ON_MOBILE_NETWORK, "true",
+	private static final String[] SETTINGS_DEFAULT_VALUES = { UPDATE_SCHEDULES_ON_MOBILE_NETWORK, "true",
 															  FULLSCREEN_MODE, "true"};
 	
 	// Every setting and its value gets stored in this map
