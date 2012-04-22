@@ -109,7 +109,7 @@
                 android:id="@+id/TextView04"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#FFFFFF" android:text="Den nyaste APK-filen går att hitta här: https://github.com/tobbebia/Skolschema"
+                android:textColor="#FFFFFF" android:text="Den nyaste APK-filen går att hitta här: https://github.com/tobbebia/Skolschema/tree/master/bin"
                 android:autoLink="web" />
         </LinearLayout>
 
