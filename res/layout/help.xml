@@ -1,116 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
 
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/scrollView1"
+    <LinearLayout
+        android:id="@+id/linearLayout1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
-
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
         <LinearLayout
-            android:id="@+id/linearLayout1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:id="@+id/linearLayout2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/help"
+                android:textColor="#FFFFFF"
+                android:textSize="40dp" />
 
             <LinearLayout
-                android:id="@+id/linearLayout2"
+                android:id="@+id/linearLayout4"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    android:id="@+id/textView1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Hjälp"
-                    android:textColor="#FFFFFF"
-                    android:textSize="40dp" />
+                android:layout_height="fill_parent"
+                android:gravity="bottom"
+                android:orientation="vertical" >
 
                 <LinearLayout
-                    android:id="@+id/linearLayout4"
+                    android:id="@+id/linearLayout3"
                     android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:gravity="bottom"
-                    android:orientation="vertical" >
-
-                    <LinearLayout
-                        android:id="@+id/linearLayout3"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="right" >
-
-                        <TextView
-                            android:id="@+id/textView5"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="right"
-                            android:text="Skolschema version "
-                            android:textSize="10dp" />
-
-                        <TextView
-                            android:id="@+id/textView6"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="right"
-                            android:text="@string/app_version"
-                            android:textSize="10dp" />
-                    </LinearLayout>
+                    android:layout_height="wrap_content"
+                    android:gravity="right" >
 
                     <TextView
-                        android:id="@+id/textView4"
-                        android:layout_width="fill_parent"
+                        android:id="@+id/textView5"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="bottom|right"
-                        android:text="Appen är skapad av Tobias Olofsson"
+                        android:gravity="right"
+                        android:text="@string/helpVersion"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="@string/app_version"
                         android:textSize="10dp" />
                 </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="bottom|right"
+                    android:text="@string/helpCreatedBy"
+                    android:textSize="10dp" />
             </LinearLayout>
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="10dp"
-                android:text="När uppdateras mitt schema?"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Varje gång du öppnar ett schema kommer programmet automatiskt försöka uppdatera det. Om det inte finns någon internetanslutning använder programmet den cachade versionen av schemat som sparas i en av undermapparna till mappen &quot;/sdcard/Skolschema/&quot;."
-                android:textColor="#FFFFFF" />
-
-            <TextView
-                android:id="@+id/TextView02"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="10dp"
-                android:text="Vad är skillnaden mellan de olika schematyperna?"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/TextView01"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ett veckoschema visar alltid ett schema som är aktuellt för den vecka det är. Ett dagsschema visar ett schema som är aktuellt för den dagen det är. Till skillnad från veckoschemat visar alltså dagsschemat bara de lektioner som du har för dagen, du kan inte se vilka lektioner du ska ha imorgon. Om du vill kunna se schemat för en specifik vecka så finns det ett alternativ för det."
-                android:textColor="#FFFFFF" />
-
-            <TextView
-                android:id="@+id/TextView03"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="10dp"
-                android:text="Var kan jag hitta uppdateringar till appen?"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/TextView04"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#FFFFFF" android:text="Den nyaste APK-filen går att hitta här: https://github.com/tobbebia/Skolschema/tree/master/bin"
-                android:autoLink="web" />
         </LinearLayout>
 
-    </ScrollView>
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="@string/helpWhenUpdateTitle"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/helpWhenUpdateBody"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/TextView02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="@string/helpDiffTitle"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/TextView01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/helpDiffBody"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/TextView03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="@string/helpUpdatesTitle"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/TextView04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoLink="web"
+            android:text="@string/helpUpdatesBody"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+</ScrollView>

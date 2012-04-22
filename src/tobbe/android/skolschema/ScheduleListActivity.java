@@ -83,8 +83,8 @@ public class ScheduleListActivity extends ListActivity implements OnClickListene
 		
 		// Ask the user if the schedule shall be deleted
 		AlertDialog.Builder adb = new AlertDialog.Builder(this);
-		adb.setTitle("Ta bort schema");
-		adb.setMessage("Vill du verkligen ta bort schemat: " + scheduleNames[position] + '?');
+		adb.setTitle(getResources().getString(R.string.removeScheduleTitle));
+		adb.setMessage(getResources().getString(R.string.removeScheduleMessage) + scheduleNames[position] + '?');
 		
 		adb.setPositiveButton("Ja", new DialogInterface.OnClickListener() {
 			@Override

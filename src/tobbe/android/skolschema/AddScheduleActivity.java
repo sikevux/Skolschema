@@ -50,7 +50,7 @@ public class AddScheduleActivity extends Activity implements OnClickListener, On
 		scheduleName = (EditText) findViewById(R.id.scheduleName);
 		school = (Spinner) findViewById(R.id.school);
 		
-		final String[] schoolSpinnerItems = new String[] {"Katedralskolan", "Polhemskolan", "Spyken", "Fäladsgården"};
+		final String[] schoolSpinnerItems = getResources().getStringArray(R.array.schoolList);
 		ArrayAdapter<String> schoolSpinnerAdapter = new ArrayAdapter<String>(this,
 		        R.layout.school_spinner, schoolSpinnerItems);
 		schoolSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -72,6 +72,9 @@ public class AddScheduleActivity extends Activity implements OnClickListener, On
 					break;
 				case 3:
 					schoolID = "87850";
+					break;
+				case 4:
+					schoolID = "27750";
 					break;
 				}
 			}
@@ -111,9 +114,9 @@ public class AddScheduleActivity extends Activity implements OnClickListener, On
 					return;
 				}
 				
-				scheduleDir.mkdir();
+				scheduleDir.mkdir(); 
 			} else {
-				Toast.makeText(this, "För kort schemanamn.", Toast.LENGTH_LONG).show();
+				Toast.makeText(this, getResources().getString(R.string.tooShortSchedule), Toast.LENGTH_LONG).show();
 				return;
 			}
 			
@@ -122,7 +125,7 @@ public class AddScheduleActivity extends Activity implements OnClickListener, On
 			sStudentID.trim();
 			
 			if(sStudentID == "") {
-				Toast.makeText(this, "För kort personnummer.", Toast.LENGTH_LONG).show();
+				Toast.makeText(this, getResources().getString(R.string.tooShortID), Toast.LENGTH_LONG).show();
 				scheduleDir.delete();
 				return;
 			}
@@ -145,10 +148,10 @@ public class AddScheduleActivity extends Activity implements OnClickListener, On
 					sSpecificWeekNumber.trim();
 					
 					/*
-					 This is commented because of Fäladsgården.
+					 This is commented because of FÃ¤ladsgÃ¥rden.
 			
 					if(sSpecificWeekNumber == "") {
-						Toast.makeText(this, "För kort specifik vecka.", Toast.LENGTH_LONG).show();
+						Toast.makeText(this, "FÃ¶r kort specifik vecka.", Toast.LENGTH_LONG).show();
 						out.close();
 						scheduleDir.delete();
 						return;
@@ -168,7 +171,7 @@ public class AddScheduleActivity extends Activity implements OnClickListener, On
 				}
 				
 			} catch(IOException e) {
-				Toast.makeText(this, "Kunde ej skriva till info-filen.", Toast.LENGTH_LONG).show();
+				Toast.makeText(this, getResources().getString(R.string.couldNotWriteInfo) , Toast.LENGTH_LONG).show();
 				scheduleDir.delete();
 				e.printStackTrace();
 			}

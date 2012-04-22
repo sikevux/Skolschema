@@ -43,6 +43,10 @@ public class ScheduleSettingsActivity extends Activity implements OnCheckedChang
 	
 	private String schoolID = null;
 	
+	
+	/**
+	 * This code block is also found in AddScheduleActivity.java.
+	 */
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +54,7 @@ public class ScheduleSettingsActivity extends Activity implements OnCheckedChang
 
 		school = (Spinner) findViewById(R.id.school);
 		
-		final String[] schoolSpinnerItems = new String[] {"Katedralskolan", "Polhemskolan", "Spyken", "Fäladsgården"};
+		final String[] schoolSpinnerItems = getResources().getStringArray(R.array.schoolList);
 		ArrayAdapter<String> schoolSpinnerAdapter = new ArrayAdapter<String>(this,
 		        R.layout.school_spinner, schoolSpinnerItems);
 		schoolSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -72,6 +76,9 @@ public class ScheduleSettingsActivity extends Activity implements OnCheckedChang
 					break;
 				case 3:
 					schoolID = "87850";
+					break;
+				case 4:
+					schoolID = "27750";
 					break;
 				}
 			}
@@ -112,6 +119,8 @@ public class ScheduleSettingsActivity extends Activity implements OnCheckedChang
 				school.setSelection(2);
 			} else if(schoolID.equals("87850")) {
 				school.setSelection(3);
+			} else if(schoolID.equals("27750")) {
+				school.setSelection(4);
 			}
 			
 			password.setText(in.readLine());
@@ -158,12 +167,12 @@ public class ScheduleSettingsActivity extends Activity implements OnCheckedChang
 			sStudentID.trim();
 			
 			if(sStudentID == "") {
-				Toast.makeText(this, "För kort personnummer.", Toast.LENGTH_LONG).show();
+				Toast.makeText(this, getResources().getString(R.string.tooShortID), Toast.LENGTH_LONG).show();
 				return;
 			}
 
 			if(schoolID == null) {
-				Toast.makeText(this, "Du måste välja en skola.", Toast.LENGTH_LONG).show();
+				Toast.makeText(this, getResources().getString(R.string.schoolIDIsNull), Toast.LENGTH_LONG).show();
 				return;
 			}
 			
@@ -185,7 +194,7 @@ public class ScheduleSettingsActivity extends Activity implements OnCheckedChang
 					sSpecificWeekNumber.trim();
 					
 					if(sSpecificWeekNumber == "") {
-						Toast.makeText(this, "För kort specifik vecka.", Toast.LENGTH_LONG).show();
+						Toast.makeText(this, "FÃ¶r kort specifik vecka.", Toast.LENGTH_LONG).show();
 						out.close();
 						return;
 					}
@@ -202,7 +211,7 @@ public class ScheduleSettingsActivity extends Activity implements OnCheckedChang
 					msOut.close();
 				}
 			} catch(IOException e) {
-				Toast.makeText(this, "Kunde ej skriva till info-filen.", Toast.LENGTH_LONG).show();
+				Toast.makeText(this, getResources().getString(R.string.couldNotWriteInfo), Toast.LENGTH_LONG).show();
 				e.printStackTrace();
 			}
 			
