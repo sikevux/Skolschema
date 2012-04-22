@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" android:dividerHeight="6sp">
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" android:gravity="bottom">
+
+        <Button
+            android:id="@+id/newSchedule"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Lägg till nytt schema att följa" />
+
+    </LinearLayout>
+
+</LinearLayout>
