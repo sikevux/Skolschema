@@ -90,7 +90,7 @@ public class ScheduleActivity extends Activity {
     	
     	if(!baseDir.exists()) {
     		if(!baseDir.mkdir()) {
-    			Logger.log("Kunde inte skapa basmappen pÂ lagringsmedia.");
+    			Logger.log("Kunde inte skapa basmappen p√• lagringsmedia.");
     			finish();
     		}
     	}
@@ -154,9 +154,9 @@ public class ScheduleActivity extends Activity {
     
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-    	menu.add(0, MENU_CHOOSE_SCHEDULE, 0, "V‰lj schema");
+    	menu.add(0, MENU_CHOOSE_SCHEDULE, 0, "V√§lj schema");
     	menu.add(0, MENU_UPDATE_SCHEDULE, 0, "Uppdatera schemat");
-    	menu.add(0, MENU_SCHEDULE_SETTINGS, 0, "Schemainst‰llningar");
+    	menu.add(0, MENU_SCHEDULE_SETTINGS, 0, "Schemainst√§llningar");
     	menu.add(0, MENU_ABOUT, 0, "Om appen");
     	
         return true;
@@ -205,7 +205,7 @@ public class ScheduleActivity extends Activity {
 		if(ni != null && ni.getType() == ConnectivityManager.TYPE_MOBILE && !Settings.getBoolean(Settings.UPDATE_SCHEDULES_ON_MOBILE_NETWORK))
 		{	
 	    	// Tell the user we use the cached version
-	    	Toast.makeText(this, "Anv‰nder cachad version av schemat (mobilt internet ‰r pÂslaget).", Toast.LENGTH_LONG).show();
+	    	Toast.makeText(this, "Anv√§nder cachad version av schemat (mobilt internet √§r p√•slaget).", Toast.LENGTH_LONG).show();
 		
 			// Show the schedule
 		    refreshImage();
@@ -286,7 +286,7 @@ public class ScheduleActivity extends Activity {
     
     
 	private void aboutDialog() {
-		final String items[] = {"Hj‰lp", "Inst‰llningar"};
+		final String items[] = {"Hj√§lp", "Inst√§llningar"};
 		final ScheduleActivity thisActivity = this;
 
 		AlertDialog.Builder ab = new AlertDialog.Builder(this);
@@ -322,7 +322,7 @@ public class ScheduleActivity extends Activity {
 		@Override
 		protected void onProgressUpdate(Integer... integers) {
 			if(integers[0] == -1)
-				Toast.makeText(ScheduleActivity.this, "Kunde ej uppdatera schemat, anv‰nder cachad.", Toast.LENGTH_LONG).show();
+				Toast.makeText(ScheduleActivity.this, "Kunde ej uppdatera schemat, anv√§nder cachad.", Toast.LENGTH_LONG).show();
 		}
 		
 		@Override
