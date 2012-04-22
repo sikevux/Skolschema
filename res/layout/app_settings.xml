@@ -8,18 +8,18 @@
         android:id="@+id/updateScheduleOnMobileNetwork"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tillåt automatisk uppdatering av scheman på mobildata" />
+        android:text="@string/settingsAutomaticUpdate" />
 
     <CheckBox
         android:id="@+id/fullscreenMode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Visa scheman i fullskärmsläge" />
+        android:text="@string/settingsFullScreen" />
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="För att vissa ändringar ska börja gälla krävs en omstart av appen." />
+        android:text="@string/settingsRestart" />
 
 </LinearLayout>

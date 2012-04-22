@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="schoolList">
+        <item>Katedralskolan</item>
+        <item>Polhemskolan</item>
+        <item>Spyken</item>
+        <item>Fäladsgården</item>
+        <item>Vipan</item>
+    </string-array>
+    <string-array name="aboutDialog">
+        <item>Hjälp</item>
+        <item>Inställningar</item>
+    </string-array>
+
+</resources>

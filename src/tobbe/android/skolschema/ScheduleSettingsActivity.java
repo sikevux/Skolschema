@@ -54,7 +54,7 @@ public class ScheduleSettingsActivity extends Activity implements OnCheckedChang
 
 		school = (Spinner) findViewById(R.id.school);
 		
-		final String[] schoolSpinnerItems = new String[] {"Katedralskolan", "Polhemskolan", "Spyken", "Fäladsgården", "Vipan"};
+		final String[] schoolSpinnerItems = getResources().getStringArray(R.array.schoolList);
 		ArrayAdapter<String> schoolSpinnerAdapter = new ArrayAdapter<String>(this,
 		        R.layout.school_spinner, schoolSpinnerItems);
 		schoolSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -167,12 +167,12 @@ public class ScheduleSettingsActivity extends Activity implements OnCheckedChang
 			sStudentID.trim();
 			
 			if(sStudentID == "") {
-				Toast.makeText(this, "För kort personnummer.", Toast.LENGTH_LONG).show();
+				Toast.makeText(this, getResources().getString(R.string.tooShortID), Toast.LENGTH_LONG).show();
 				return;
 			}
 
 			if(schoolID == null) {
-				Toast.makeText(this, "Du måste välja en skola.", Toast.LENGTH_LONG).show();
+				Toast.makeText(this, getResources().getString(R.string.schoolIDIsNull), Toast.LENGTH_LONG).show();
 				return;
 			}
 			
@@ -211,7 +211,7 @@ public class ScheduleSettingsActivity extends Activity implements OnCheckedChang
 					msOut.close();
 				}
 			} catch(IOException e) {
-				Toast.makeText(this, "Kunde ej skriva till info-filen.", Toast.LENGTH_LONG).show();
+				Toast.makeText(this, getResources().getString(R.string.couldNotWriteInfo), Toast.LENGTH_LONG).show();
 				e.printStackTrace();
 			}
 			

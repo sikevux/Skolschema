@@ -1,149 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/scrollView1"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" android:fadeScrollbars="false">
-
-        <LinearLayout
-            android:id="@+id/linearLayout2"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView1"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:fadeScrollbars="false" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:text="@string/newSchedule"
+            android:textColor="#FFFFFF"
+            android:textSize="50dp" />
 
-            <TextView
-                android:id="@+id/textView1"
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/newScheduleName"
+            android:textColor="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/scheduleName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/newScheduleSchool"
+            android:textColor="#FFFFFF" />
+
+        <Spinner
+            android:id="@+id/school"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/newSchedulePassword"
+            android:textColor="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/newScheduleID"
+            android:textColor="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/studentID"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="text" >
+
+            <requestFocus />
+        </EditText>
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/newScheduleType"
+            android:textColor="#FFFFFF" />
+
+        <RadioGroup
+            android:id="@+id/scheduleType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <RadioButton
+                android:id="@+id/weeklyRadio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nytt schema"
-                android:textColor="#FFFFFF"
-                android:textSize="50dp" />
+                android:checked="true"
+                android:text="@string/newScheduleWeek" />
 
-            <TextView
-                android:id="@+id/textView4"
+            <RadioButton
+                android:id="@+id/dailyRadio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Schemanamn"
-                android:textColor="#FFFFFF" />
+                android:text="@string/newScheduleDay" />
 
-            <EditText
-                android:id="@+id/scheduleName"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" android:inputType="text"/>
-
-            <TextView
-                android:id="@+id/textView2"
+            <RadioButton
+                android:id="@+id/specificWeekRadio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Skola"
-                android:textColor="#FFFFFF" />
+                android:text="@string/newScheduleWeekSpecific" />
+        </RadioGroup>
 
-            <Spinner
-                android:id="@+id/school"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="@string/canBeChanged"
+            android:textColor="#FFFFFF"
+            android:textSize="12dp" />
 
-            <TextView
-                android:id="@+id/textView6"
+        <TextView
+            android:id="@+id/specificWeekLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/newScheduleWeekSpecificPick"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/specificWeekNumber"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:editable="false"
+            android:inputType="number"
+            android:visibility="gone" />
+
+        <CheckBox
+            android:id="@+id/mainSchedule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/newScheduleMain" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="bottom|right"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/addSchedule"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Schemalösenord (lämna blank ifall inget krävs)" android:textColor="#FFFFFF"/>
-
-            <EditText
-                android:id="@+id/password"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" android:inputType="text"/>
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Personnummer (ÅÅMMDD-XXXX)"
-                android:textColor="#FFFFFF" />
-
-            <EditText
-                android:id="@+id/studentID"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" android:inputType="text">
-
-                <requestFocus />
-            </EditText>
-
-            <TextView
-                android:id="@+id/textView7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Schematyp" android:textColor="#FFFFFF"/>
-
-            <RadioGroup
-                android:id="@+id/scheduleType"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-
-                <RadioButton
-                    android:id="@+id/weeklyRadio"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checked="true"
-                    android:text="Veckoschema (visar alltid veckans schema)" />
-
-                <RadioButton
-                    android:id="@+id/dailyRadio"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Dagsschema (visar alltid dagens schema)" />
-
-                <RadioButton
-                    android:id="@+id/specificWeekRadio"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Schema för specifik vecka" />
-            </RadioGroup>
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="right"
-                android:text="(går att ändra senare)"
-                android:textColor="#FFFFFF"
-                android:textSize="12dp" />
-
-            <TextView
-                android:id="@+id/specificWeekLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Specifik vecka:"
-                android:visibility="gone" />
-
-            <EditText
-                android:id="@+id/specificWeekNumber"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:editable="false"
-                android:inputType="number"
-                android:visibility="gone" />
-
-            <CheckBox
-                android:id="@+id/mainSchedule"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Detta schemat är mitt huvudschema, det ska öppnas direkt när programmet startar." />
-
-            <LinearLayout
-                android:id="@+id/linearLayout1"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:gravity="bottom|right"
-                android:orientation="vertical" >
-
-                <Button
-                    android:id="@+id/addSchedule"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Lägg till schema" />
-            </LinearLayout>
+                android:text="@string/newScheduleAdd" />
         </LinearLayout>
+    </LinearLayout>
+
 </ScrollView>

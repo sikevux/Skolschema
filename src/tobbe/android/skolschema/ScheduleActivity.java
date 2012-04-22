@@ -76,7 +76,8 @@ public class ScheduleActivity extends Activity {
         	try {
 				noMedia.createNewFile();
 			} catch (IOException e) {
-				Logger.log("Kunde inte skapa .nomedia-fil. Schmeabilder kan dyka upp i galleriappen.");
+				
+				Logger.log(getResources().getString(R.string.couldNotCreatenomedia));
 			}
         }
 
@@ -90,7 +91,7 @@ public class ScheduleActivity extends Activity {
     	
     	if(!baseDir.exists()) {
     		if(!baseDir.mkdir()) {
-    			Logger.log("Kunde inte skapa basmappen på lagringsmedia.");
+    			Logger.log(getResources().getString(R.string.couldNotCreateBaseDir));
     			finish();
     		}
     	}
@@ -121,7 +122,7 @@ public class ScheduleActivity extends Activity {
 	    			// Update
 	    			showSchedule();
     			} catch(IOException e) {
-    				Logger.log("Korrupt huvudschemafil, tar bort den.");
+    				Logger.log(getResources().getString(R.string.corruptMainScheduleFile));
     				mainSchedule.delete();
     			}
     		} else {
@@ -154,10 +155,10 @@ public class ScheduleActivity extends Activity {
     
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-    	menu.add(0, MENU_CHOOSE_SCHEDULE, 0, "Välj schema");
-    	menu.add(0, MENU_UPDATE_SCHEDULE, 0, "Uppdatera schemat");
-    	menu.add(0, MENU_SCHEDULE_SETTINGS, 0, "Schemainställningar");
-    	menu.add(0, MENU_ABOUT, 0, "Om appen");
+    	menu.add(0, MENU_CHOOSE_SCHEDULE, 0, getResources().getString(R.string.menuChooseSchedule));
+    	menu.add(0, MENU_UPDATE_SCHEDULE, 0, getResources().getString(R.string.menuUpdateSchedule));
+    	menu.add(0, MENU_SCHEDULE_SETTINGS, 0, getResources().getString(R.string.menuScheduleSettings));
+    	menu.add(0, MENU_ABOUT, 0, getResources().getString(R.string.menuAbout));
     	
         return true;
     }
@@ -205,7 +206,7 @@ public class ScheduleActivity extends Activity {
 		if(ni != null && ni.getType() == ConnectivityManager.TYPE_MOBILE && !Settings.getBoolean(Settings.UPDATE_SCHEDULES_ON_MOBILE_NETWORK))
 		{	
 	    	// Tell the user we use the cached version
-	    	Toast.makeText(this, "Använder cachad version av schemat (mobilt internet är påslaget).", Toast.LENGTH_LONG).show();
+	    	Toast.makeText(this, getResources().getString(R.string.usingCachedAndMobileOn), Toast.LENGTH_LONG).show();
 		
 			// Show the schedule
 		    refreshImage();
@@ -273,25 +274,25 @@ public class ScheduleActivity extends Activity {
     		in.close();
 				
     	} catch(IOException e) {
-    		Toast.makeText(this, "Korrupt schemainfofil!", Toast.LENGTH_LONG).show();
+    		Toast.makeText(this, getResources().getString(R.string.corruptScheduleInfoFile), Toast.LENGTH_LONG).show();
     	}
     	
     	// Download the schedule
     	if(url != null) {
     		new DownloadSchedule().execute(url, scheduleFile.getAbsolutePath());
     	} else {
-    		Toast.makeText(this, "Korrupt schemainfofil!", Toast.LENGTH_LONG).show();
+    		Toast.makeText(this, getResources().getString(R.string.corruptScheduleInfoFile), Toast.LENGTH_LONG).show();
     	}
     }
     
     
 	private void aboutDialog() {
-		final String items[] = {"Hjälp", "Inställningar"};
+		final String items[] = getResources().getStringArray(R.array.aboutDialog);
 		final ScheduleActivity thisActivity = this;
 
 		AlertDialog.Builder ab = new AlertDialog.Builder(this);
 		
-		ab.setTitle("Om appen");
+		ab.setTitle(getResources().getString(R.string.aboutDialogTitle));
 		ab.setItems(items, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface d, int choice) {
 				if(choice == 0) {
@@ -322,7 +323,7 @@ public class ScheduleActivity extends Activity {
 		@Override
 		protected void onProgressUpdate(Integer... integers) {
 			if(integers[0] == -1)
-				Toast.makeText(ScheduleActivity.this, "Kunde ej uppdatera schemat, använder cachad.", Toast.LENGTH_LONG).show();
+				Toast.makeText(ScheduleActivity.this, getResources().getString(R.string.couldNotUpdateScheduleCached), Toast.LENGTH_LONG).show();
 		}
 		
 		@Override

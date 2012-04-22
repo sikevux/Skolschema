@@ -2,8 +2,9 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/scrollView1"
     android:layout_width="fill_parent"
-    android:layout_height="wrap_content" android:fadeScrollbars="false">
-
+    android:layout_height="wrap_content"
+    android:fadeScrollbars="false" >
+
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="wrap_content"
@@ -14,7 +15,7 @@
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Schemainställningar"
+            android:text="@string/settingsTitle"
             android:textColor="#FFFFFF"
             android:textSize="34dp" />
 
@@ -22,7 +23,7 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Skola"
+            android:text="@string/newScheduleSchool"
             android:textColor="#FFFFFF" />
 
         <Spinner
@@ -34,24 +35,27 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Schemalösenord (lämna blank ifall inget krävs)" android:textColor="#FFFFFF"/>
+            android:text="@string/newSchedulePassword"
+            android:textColor="#FFFFFF" />
 
         <EditText
             android:id="@+id/password"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content" android:inputType="text"/>
+            android:layout_height="wrap_content"
+            android:inputType="text" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Personnummer (ÅÅMMDD-XXXX)"
+            android:text="@string/newScheduleID"
             android:textColor="#FFFFFF" />
 
         <EditText
             android:id="@+id/studentID"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content" android:inputType="text">
+            android:layout_height="wrap_content"
+            android:inputType="text" >
 
             <requestFocus />
         </EditText>
@@ -60,7 +64,8 @@
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Schematyp" android:textColor="#FFFFFF"/>
+            android:text="@string/newScheduleType"
+            android:textColor="#FFFFFF" />
 
         <RadioGroup
             android:id="@+id/scheduleType"
@@ -72,26 +77,26 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="true"
-                android:text="Veckoschema (visar alltid veckans schema)" />
+                android:text="@string/newScheduleWeek" />
 
             <RadioButton
                 android:id="@+id/dailyRadio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Dagsschema (visar alltid dagens schema)" />
+                android:text="@string/newScheduleDay" />
 
             <RadioButton
                 android:id="@+id/specificWeekRadio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Schema för specifik vecka" />
+                android:text="@string/newScheduleWeekSpecific" />
         </RadioGroup>
 
         <TextView
             android:id="@+id/specificWeekLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Specifik vecka:"
+            android:text="@string/newScheduleWeekSpecificPick"
             android:visibility="gone" />
 
         <EditText
@@ -106,7 +111,7 @@
             android:id="@+id/mainSchedule"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Detta schemat är mitt huvudschema, det ska öppnas direkt när programmet startar." />
+            android:text="@string/newScheduleMain" />
 
         <LinearLayout
             android:id="@+id/linearLayout1"
@@ -119,7 +124,7 @@
                 android:id="@+id/saveSettings"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Spara inställningar" />
+                android:text="@string/settingsSave" />
         </LinearLayout>
     </LinearLayout>
 
