@@ -1,0 +1,26 @@
+* Skolschema
+** What?
+An application that allows students of the following schools to view
+their schedule:
+
++ Katedralskolan
++ Spyken
++ Vipan
++ Polhem
++ Fäladsgården
+
+** Why?
+Heck if I knew
+
+** By Who?
+Head of Developement:
+
++ Tobias Olofsson
+
+Contributors:
+
++ Patrik 'Sikevux' Greco
+
+
+** License?
+2-clause BSD license (aka "FreeBSD License" or "Simplified BSD License")
