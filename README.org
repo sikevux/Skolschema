@@ -1,7 +1,6 @@
-* Skolschema
+﻿* Skolschema
 ** What?
-An application that allows students of the following schools to view
-their schedule:
+An Android application which allow students of the following schools to view their schedules:
 
 + Katedralskolan
 + Spyken
@@ -9,13 +8,11 @@ their schedule:
 + Polhem
 + Fäladsgården
 
-** Why?
-Heck if I knew
+View your schedule in different ways: per week schedule, per day schedule or for a specific week.
+The schedules are cached on the SDCARD or a similar storage device. An unlimited amount of schedules can be cached (including schedules for other students/teachers/groups).
 
 ** By Who?
-Head of Developement:
-
-+ Tobias Olofsson
+Tobias Olofsson
 
 Contributors:
 
