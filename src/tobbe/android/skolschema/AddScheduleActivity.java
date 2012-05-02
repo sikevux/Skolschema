@@ -110,7 +110,7 @@ public class AddScheduleActivity extends Activity implements OnClickListener, On
 				scheduleDir = new File(baseDir, sScheduleName);
 				
 				if(scheduleDir.exists()) {
-					Toast.makeText(this, "Upptaget schemanamn.", Toast.LENGTH_LONG).show();
+					Toast.makeText(this, getResources().getString(R.string.schedulenameTaken), Toast.LENGTH_LONG).show();
 					return;
 				}
 				

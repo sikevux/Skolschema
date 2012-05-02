@@ -7,77 +7,79 @@
     <string name="tooShortID">För kort personnummer.</string>
     <string name="couldNotWriteInfo">Kunde ej skriva till info-filen.</string>
     <string name="couldNotCreatenomedia">Kunde inte skapa .nomedia-fil. Schmeabilder kan dyka upp i galleriappen.</string>
-	<string name="couldNotCreateBaseDir">Kunde inte skapa basmappen
+    <string name="couldNotCreateBaseDir">Kunde inte skapa basmappen
 	på lagringsmedia.</string>
-	<string name="corruptMainScheduleFile">Korrupt huvudschemafil, tar
+    <string name="corruptMainScheduleFile">Korrupt huvudschemafil, tar
 	bort den.</string>
-	<string name="menuChooseSchedule">Välj schema</string>
-	<string name="menuUpdateSchedule">Uppdatera schemat</string>
-	<string name="menuScheduleSettings">Schemainställningar</string>
-	<string name="menuAbout">Om appen</string>
-	<string name="usingCachedAndMobileOn">Använder cachad version av
+    <string name="menuChooseSchedule">Välj schema</string>
+    <string name="menuUpdateSchedule">Uppdatera schemat</string>
+    <string name="menuScheduleSettings">Schemainställningar</string>
+    <string name="menuAbout">Om appen</string>
+    <string name="usingCachedAndMobileOn">Använder cachad version av
 	schemat (mobilt internet är påslaget).</string>
-	<string name="corruptScheduleInfoFile">Korrupt
+    <string name="corruptScheduleInfoFile">Korrupt
 	schemainfo-fil!</string>
-	<string name="aboutDialogTitle">Om appen</string>
-	<string name="couldNotUpdateScheduleCached">Kunde ej uppdatera
+    <string name="aboutDialogTitle">Om appen</string>
+    <string name="couldNotUpdateScheduleCached">Kunde ej uppdatera
 	schemat, använder cachad version.</string>
-	<string name="removeScheduleTitle">Ta bort schema</string>
-	<string name="removeScheduleMessage">Vill du verkligen ta bort
+    <string name="removeScheduleTitle">Ta bort schema</string>
+    <string name="removeScheduleMessage">Vill du verkligen ta bort
 	schemat: </string>
-	<string name="schoolIDIsNull">Du måste välja en skola.</string>
-	<string name="newSchedule">Nytt schema</string>
-	<string name="newScheduleName">Schemanamn</string>
-	<string name="newScheduleSchool">Skola</string>
-	<string name="newSchedulePassword">Schemalösenord (lämna blank
+    <string name="schoolIDIsNull">Du måste välja en skola.</string>
+    <string name="newSchedule">Nytt schema</string>
+    <string name="newScheduleName">Schemanamn</string>
+    <string name="newScheduleSchool">Skola</string>
+    <string name="newSchedulePassword">Schemalösenord (lämna blank
 	ifall inget krävs)</string>
-	<string name="newScheduleID">Personnummer (ÅÅMMDD-XXXX)</string>
-	<string name="newScheduleType">Schematyp</string>
-	<string name="newScheduleWeek">Veckoschema (visar alltid veckans
+    <string name="newScheduleID">Personnummer (ÅÅMMDD-XXXX)</string>
+    <string name="newScheduleType">Schematyp</string>
+    <string name="newScheduleWeek">Veckoschema (visar alltid veckans
 	schema)</string>
-	<string name="newScheduleDay">Dagsschema (visar alltid dagens
+    <string name="newScheduleDay">Dagsschema (visar alltid dagens
 	schema)</string>
-	<string name="newScheduleWeekSpecific">Schema för specifik
+    <string name="newScheduleWeekSpecific">Schema för specifik
 	vecka</string>
-	<string name="canBeChanged">(går att ändra senare)</string>
-	<string name="newScheduleWeekSpecificPick">Specifik
+    <string name="canBeChanged">(går att ändra senare)</string>
+    <string name="newScheduleWeekSpecificPick">Specifik
 	vecka:</string>
-	<string name="newScheduleMain">Detta schemat är mitt huvudschema,
+    <string name="newScheduleMain">Detta schemat är mitt huvudschema,
 	det ska öppnas direkt när appen startar.</string>
-	<string name="newScheduleAdd">Lägg till schema</string>
-	<string name="settingsAutomaticUpdate">Tillåt automatisk
+    <string name="newScheduleAdd">Lägg till schema</string>
+    <string name="settingsAutomaticUpdate">Tillåt automatisk
 	uppdatering av scheman på mobildata</string>
-	<string name="settingsFullScreen">Visa scheman i
+    <string name="settingsFullScreen">Visa scheman i
 	fullskärmsläge</string>
-	<string name="settingsRestart">För att vissa ändringar ska börja
+    <string name="settingsRestart">För att vissa ändringar ska börja
 	gälla krävs en omstart av appen.</string>
-	<string name="help">Hjälp</string>
-	<string name="helpVersion">Skolschema version </string>
-	<string name="helpCreatedBy">Appen är skapad a Tobias
+    <string name="help">Hjälp</string>
+    <string name="helpVersion">Skolschema version </string>
+    <string name="helpCreatedBy">Appen är skapad a Tobias
 	Olofsson</string>
-	<string name="helpWhenUpdateTitle">När uppdateras mitt
+    <string name="helpWhenUpdateTitle">När uppdateras mitt
 	schema?</string>
-	<string name="helpWhenUpdateBody">Varje gång du öppnar ett schema
+    <string name="helpWhenUpdateBody">Varje gång du öppnar ett schema
 	kommer programmet automatiskt försöka uppdatera det. Om det inte
 	finns någon internetanslutning använder programmet den cachade
 	versionen av schemat som sparas i en av undermapparna till mappen
-	&quot;/sdcard/Skolschema/&quot;.</string>
-	<string name="helpDiffTitle">Vad är skillnaden mellan de olika
+	"/sdcard/Skolschema/".</string>
+    <string name="helpDiffTitle">Vad är skillnaden mellan de olika
 	schematyperna?</string>
-	<string name="helpDiffBody">Ett veckoschema visar alltid ett
+    <string name="helpDiffBody">Ett veckoschema visar alltid ett
 	schema som är aktuellt för den vecka det är. Ett dagsschema visar
 	ett schema som är aktuellt för den dagen det är. Till skillnad
 	från veckoschemat visar alltså dagsschemat bara de lektioner som
 	du har för dagen, du kan inte se vilka lektioner du ska ha
 	imorgon. Om du vill kunna se schemat för en specifik vecka så
 	finns det ett alternativ för det.</string>
-	<string name="helpUpdatesTitle">Var kan jag hitta uppdateringar
+    <string name="helpUpdatesTitle">Var kan jag hitta uppdateringar
 	till appen?</string>
-	<string name="helpUpdatesBody">Den nyaste APK-filen går att hitta
+    <string name="helpUpdatesBody">Den nyaste APK-filen går att hitta
 	här:
 	https://github.com/tobbebia/Skolschema/tree/master/bin</string>
-	<string name="scheduleListAdd">Lägg till nytt schema att
+    <string name="scheduleListAdd">Lägg till nytt schema att
 	följa</string>
-	<string name="settingsTitle">Schemainställningar</string>
-	<string name="settingsSave">Spara inställningar"</string>
+    <string name="settingsTitle">Schemainställningar</string>
+    <string name="settingsSave">Spara inställningar"</string>
+    <string name="schedulenameTaken">Upptaget schemanamn.</string>
+
 </resources>
