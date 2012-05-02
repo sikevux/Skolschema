@@ -81,5 +81,6 @@
     <string name="settingsTitle">Schemainställningar</string>
     <string name="settingsSave">Spara inställningar"</string>
     <string name="schedulenameTaken">Upptaget schemanamn.</string>
+    <string name="tooShortWeek">För kort specifik vecka.</string>
 
 </resources>

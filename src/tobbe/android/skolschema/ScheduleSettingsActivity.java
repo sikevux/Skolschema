@@ -194,7 +194,7 @@ public class ScheduleSettingsActivity extends Activity implements OnCheckedChang
 					sSpecificWeekNumber.trim();
 					
 					if(sSpecificWeekNumber == "") {
-						Toast.makeText(this, "För kort specifik vecka.", Toast.LENGTH_LONG).show();
+						Toast.makeText(this, getResources().getString(R.string.tooShortWeek), Toast.LENGTH_LONG).show();
 						out.close();
 						return;
 					}
