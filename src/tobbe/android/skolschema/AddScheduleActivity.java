@@ -5,6 +5,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -128,6 +130,19 @@ public class AddScheduleActivity extends Activity implements OnClickListener, On
 				Toast.makeText(this, getResources().getString(R.string.tooShortID), Toast.LENGTH_LONG).show();
 				scheduleDir.delete();
 				return;
+			}
+			
+			/*
+			 * Let's make sure that the students don't need to be able to read instructions
+			 * to use the application.
+			 */
+			sStudentID = sStudentID.replaceAll("\\s+", "");
+
+			if( Pattern.compile("^(\\d{10}|\\d{13}|\\d{12})$").matcher(sStudentID).matches() ) {
+				if( Pattern.compile("^(\\d{12}|\\d{13})$").matcher(sStudentID).matches() ) {
+					sStudentID = sStudentID.substring(2);
+				}
+				sStudentID = new StringBuffer(sStudentID).insert(6, "-").toString();
 			}
 			
 			// Open the info file
