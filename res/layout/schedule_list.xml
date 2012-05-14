@@ -7,22 +7,20 @@
     <ListView
         android:id="@android:id/list"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:dividerHeight="6sp" >
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:dividerHeight="3sp"
+        android:gravity="top" >
     </ListView>
 
-    <LinearLayout
-        android:id="@+id/linearLayout1"
+    <Button
+        android:id="@+id/newSchedule"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6sp"
         android:gravity="bottom"
-        android:orientation="vertical" >
-
-        <Button
-            android:id="@+id/newSchedule"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/scheduleListAdd" />
-    </LinearLayout>
+        android:text="@string/scheduleListAdd"
+        android:textSize="24sp" >
+    </Button>
 
 </LinearLayout>
