@@ -41,6 +41,7 @@ public class AddScheduleActivity extends Activity implements OnClickListener, On
 	private Button addSchedule;
 	
 	private String schoolID = null;
+	private File scheduleDir = null;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -99,29 +100,40 @@ public class AddScheduleActivity extends Activity implements OnClickListener, On
 		addSchedule.setOnClickListener(this);
 	}
 
-	@Override
-	public void onClick(View v) {
-		if(v == addSchedule) {
-			// Check the schedule name
-			String sScheduleName = scheduleName.getText().toString();
-			sScheduleName.trim();
+	public void checkScheduleName() {
+		String sScheduleName = scheduleName.getText().toString();
+		sScheduleName.trim();
+		String sStudentID = studentID.getText().toString();
+		sStudentID.trim();
+		
+		
+		if(sScheduleName != "") {
+			// Check so that a schedule with that name doesn't already exist
+			scheduleDir = new File(baseDir, sScheduleName);
 			
-			File scheduleDir = null;
-			if(sScheduleName != "") {
-				// Check so that a schedule with that name doesn't already exist
-				scheduleDir = new File(baseDir, sScheduleName);
-				
-				if(scheduleDir.exists()) {
-					Toast.makeText(this, getResources().getString(R.string.schedulenameTaken), Toast.LENGTH_LONG).show();
-					return;
-				}
-				
-				scheduleDir.mkdir(); 
-			} else {
-				Toast.makeText(this, getResources().getString(R.string.tooShortSchedule), Toast.LENGTH_LONG).show();
+			if(scheduleDir.exists()) {
+				Toast.makeText(this, getResources().getString(R.string.schedulenameTaken), Toast.LENGTH_LONG).show();
 				return;
 			}
 			
+			scheduleDir.mkdir(); 
+		} else {
+			Toast.makeText(this, getResources().getString(R.string.tooShortSchedule), Toast.LENGTH_LONG).show();
+			return;
+		}		
+	}
+	
+	@Override
+	public void onClick(View v) {
+		if(v == addSchedule) {
+			
+			
+			/**
+			 * TODO:
+			 * Flytta till en egen funktion, och använd den här samt i ScheduleSettingsActivity.java
+			 */
+			// Check the schedule name
+			checkScheduleName();
 			// Check the student ID
 			String sStudentID = studentID.getText().toString();
 			sStudentID.trim();
